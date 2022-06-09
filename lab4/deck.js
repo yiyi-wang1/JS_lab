@@ -9,6 +9,9 @@ const deck = {
         }
     },
     draw() {
+        if (this.cards.length == 0) {
+            return "No cards to draw";
+        }
         return this.cards.shift();
     },
     reset() {
