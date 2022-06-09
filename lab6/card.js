@@ -35,8 +35,8 @@ kingOfDiamonds.toString();
 
 
 class Deck {
-    constructor(cards) {
-        this.reset();
+    constructor() {
+        this.cards = [];
     }
 
     reset() {
