@@ -11,6 +11,7 @@ class Library {
     constructor() {
         this.books = [];
     }
+
     shelve(book) {
         this.books.push(book);
         this.books.sort(a, b => { a.title.localeCompare(b.title) });

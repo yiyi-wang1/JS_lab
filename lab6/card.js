@@ -50,19 +50,19 @@ class Deck {
     }
 
     shuffle() {
-        // if (this.cards.length > 0) {
-        //     for (let index = 0; index < this.cards.length; index++) {
-        //         const randomNum = parseInt(Math.random() * (this.cards.length - 1));
-        //         const temp = this.cards[randomNum];
-        //         this.cards[randomNum] = this.cards[index];
-        //         this.cards[index] = temp;
-        //     }
-        // } else {
-        //     return 'Please set the card first!';
-        // }
-        return this.cards.sort(function () {
-            return 0.5 - Math.random();
-        });
+        if (this.cards.length > 0) {
+            for (let index = 0; index < this.cards.length; index++) {
+                const randomNum = parseInt(Math.random() * (this.cards.length - 1));
+                const temp = this.cards[randomNum];
+                this.cards[randomNum] = this.cards[index];
+                this.cards[index] = temp;
+            }
+        } else {
+            return 'Please set the card first!';
+        }
+        // return this.cards.sort(function () {
+        //     return 0.5 - Math.random();
+        // });
     }
 
     draw() {
