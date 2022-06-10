@@ -1,0 +1,44 @@
+@import"normalize.css";
+
+/* .cat3 {
+    float: right;
+} */
+
+.flex-me {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: thin dotted black;
+    /* flex-flow: row wrap; */
+    /* the above is shorthand for a combination of flex-direction and flex-wrap */
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    row-gap: 20px;
+}
+
+#fi {
+    width: 200px;
+    height: 200px;
+    border: thin dotted hotpink;
+}
+
+.num-one,
+.num-three,
+.num-five,
+.num-seven,
+.num-nine,
+.num-eleven,
+.num-thirteen {
+    order: 2;
+}
+
+.num-two {
+    order: 3;
+    flex-grow: 5;
+    /* flex-shrink: 5; */
+    display: flex;
+    /* this would be flex container as well */
+    justify-content: center;
+    align-items: center;
+}
