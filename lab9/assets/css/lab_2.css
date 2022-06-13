@@ -1,0 +1,43 @@
+@import url(reset.css);
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar1 article sidebar2"
+        "sidebar1 article sidebar2"
+        "sidebar1 article sidebar2"
+        "footer footer footer"
+    ;
+    gap: 1em;
+}
+
+.section {
+    min-height: 20vh;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar1 {
+    grid-area: sidebar1;
+}
+
+.article {
+    grid-area: article;
+}
+
+.sidebar2 {
+    grid-area: sidebar2;
+}
+
+.footer {
+    grid-area: footer;
+}
