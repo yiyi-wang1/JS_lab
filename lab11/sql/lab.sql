@@ -56,11 +56,10 @@ LAB 3
 */
 
 --Select the product whose stock has the most value (use sale price)
-SELECT * FROM products WHERE remaining_quantity > 0 ORDER BY sale_price DESC LIMIT 1;
+SELECT * (sales_price * remaining_quantity) AS stock_value FROM products WHERE remaining_quantity > 0 ORDER BY stock_value DESC LIMIT 1;
 
 --Select the most expensive product whose price is between 25 and 50 with remaining quantity
 SELECT * FROM products WHERE remaining_quantity > 0 AND price BETWEEN 25 AND 50 ORDER BY price DESC LIMIT 1;
-
 
 --Select all products on sale with remaining quantity ordered by their price and then their name
 SELECT * FROM products WHERE price > sale_price AND remaining_quantity > 0 ORDER BY price, name;
