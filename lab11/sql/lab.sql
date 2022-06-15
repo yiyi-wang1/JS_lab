@@ -29,7 +29,7 @@ SELECT * FROM students WHERE age BETWEEN 35 AND 45 LIMIT 10;
 
 --Select the third set of 10 students whose ages are more than 25 and whose first names contain `le`. 
 --The students must be ordered by their id in ascending order then first name in a descending order.
-SELECT * FROM students WHERE age > 25 AND first_name ILIKE '%le%' ORDER BY first_name DESC LIMIT 10 OFFSET 20;
+SELECT * FROM students WHERE age > 25 AND first_name ILIKE '%le%' ORDER BY id ASC, first_name DESC LIMIT 10 OFFSET 20;
 -- SELECT first_name FROM students WHERE AGE > 25 AND first_name ILIKE '%le%' ORDER BY first_name DESC;
 
 
