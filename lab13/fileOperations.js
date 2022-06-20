@@ -14,8 +14,6 @@ function pReadDir(path) {
     })
 }
 
-
-
 pReadDir("./files")
     .then((files) => {
         return Promise.all(files.map(file => pReadFile("./files/" + file, "utf8")));

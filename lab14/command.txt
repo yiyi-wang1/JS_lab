@@ -1,0 +1,18 @@
+npm init //install npm
+
+npm i pg knex //install pg, knex locally within the project
+
+npm i -g pg knex //install pg, knex globally
+
+knex --version //check the version for knex
+
+knex migrate: make CreatePosts //create a migration for making the table
+
+knex migrate:latest //update the migration
+
+knex migrate:rollback //undo the migration -> droptable or drop column
+
+knex seed: make GeneratePosts //create a seed for generating CreatePosts
+
+
+
