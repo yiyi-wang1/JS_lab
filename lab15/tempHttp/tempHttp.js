@@ -10,6 +10,8 @@ const server = http.createServer(function (req, res) {
 
         const params = url.parse(req.url, true).query;
         const fahrenheit = parseInt(params.temp);
+        // ?temp=100
+        // { }
         // const myUrl = new URL(req.url, "http://localhost:4000");
         // // console.log(myUrl);
         // const fahrenheit = parseInt(myUrl.searchParams.get('temp'));
