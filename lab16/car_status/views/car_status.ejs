@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/car_status">
+        <label for="year">Please enter the year of your car</label>
+        <!-- <input type="text" id="year" name="year"> -->
+        <select name="year" id="year">
+            <% for(let i=2025; i>= 1950; i--){%>
+                <option value="<%-i%>">
+                    <%- i %>
+                </option>
+                <% }%>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <div>
+        <% if(result) { %>
+            <h1>Please see the below for your car status:</h1>
+            <h1>
+                <%- result %>
+            </h1>
+            <% } %>
+    </div>
+</body>
+
+</html>
