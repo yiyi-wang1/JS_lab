@@ -1,0 +1,22 @@
+<nav>
+    <a href="/">Home Page</a>
+    <a href="/select_language">Select Language</a>
+    <a href="/create_todo">New Todo</a>
+    <a href="/view_todo">View Todo</a>
+
+    <% if(username1){ %>
+        <li>
+            <span>Hello, <%- username1 %> </span>
+            <form action="/sign_out" method="post">
+                <input type="submit" value="Sign Out">
+            </form>
+        </li>
+        <%}else{%>
+            <li>
+                <form action="/sign_in" method="post">
+                    <input type="text" name="username1">
+                    <input type="submit" value="Sign In">
+                </form>
+            </li>
+            <% } %>
+</nav>

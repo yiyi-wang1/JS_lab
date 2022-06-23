@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+
+    <form action="/create_todo" method="post">
+        <div class="form-group">
+            <label>Please enter your todo title:</label>
+            <input type="text" name="todo_title" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Please enter your todo body:</label>
+            <input type="text" name="todo_body" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <%- include('./partials/footer.ejs') %>

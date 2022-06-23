@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+    <form action="/select_language" method="post">
+        <div>
+            <label>Please enter your name</label>
+            <input name="username" type="text">
+            <label>Please select your preferred language</label>
+            <select name="language">
+                <% languageArr.forEach(x=> { %>
+                    <option value="<%- x %>">
+                        <%- x%>
+                    </option>
+                    <% }) %>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <%- include('./partials/footer.ejs') %>

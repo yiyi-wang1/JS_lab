@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') %>
+    <% if(fullName && favouriteColour && favouriteDay) {%>
+        <div style="color: <%- favouriteColour %>; ">
+            <h1>Thank you</h1>
+            <p>Hi, <%- fullName %>
+            </p>
+            <p>I see you also like <%- favouriteColour %>, so I changed the text to your favourite color.
+            </p>
+            <p>Let’s hang out on <%- favouriteDay %>
+            </p>
+        </div>
+        <%}%>
+            <%- include('./partials/footer.ejs') %>
