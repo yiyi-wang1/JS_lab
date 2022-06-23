@@ -46,9 +46,27 @@ app.get('/random_person', (req, res) => {
     res.render('random_person', { name: name });
 })
 
-// app.get('/fizz_buzz', (req, res) => {
-
-// })
+app.get('/fizz_buzz', (req, res) => {
+    const num1 = parseInt(req.query.num1);
+    const num2 = parseInt(req.query.num2);
+    console.log(num1, num2);
+    let arr = [];
+    if (num1 && num2) {
+        for (let i = 1; i <= 100; i++) {
+            if (i % num1 == 0 && i % num2 == 0) {
+                arr.push("FizzBuzz");
+            } else if (i % num1 == 0) {
+                arr.push("Fizz");
+            } else if (i % num2 == 0) {
+                arr.push("Buzz");
+            } else {
+                arr.push(i);
+            }
+        }
+    }
+    console.log(arr);
+    res.render('fizz_buzz', { arr: arr });
+})
 
 app.get('/directory_lister', (req, res) => {
     fs.readdir(appDir).then(files => {
