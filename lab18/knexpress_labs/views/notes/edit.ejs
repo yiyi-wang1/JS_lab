@@ -1,0 +1,9 @@
+<%- include('../partials/header.ejs') %>
+    <form action="/notes/<%- note.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <textarea rows="10" cols="60" placeholder="Please enter notes here" name="content">
+            <%- note.content %> 
+        </textarea>
+        <input type="submit" value="Edit Note">
+    </form>
+    <%- include('../partials/footer.ejs') %>

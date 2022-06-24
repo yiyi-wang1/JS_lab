@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>All Notes</h1>
+
+    <% for(let note of notes){ %>
+        <div>
+            <p>
+                <%- note.content %>
+            </p>
+        </div>
+        <%} %>
+
+            <%- include('../partials/footer.ejs') %>
