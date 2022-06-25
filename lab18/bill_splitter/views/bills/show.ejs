@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+
+    <div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Bill</h5>
+                <em>Created: <%- bill.created_at %> </em>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <span>Total Amount: <%- bill.billTotal %> </span>
+                </li>
+                <li class="list-group-item">
+                    <span>Tax Percentage: <%- bill.taxPercent %>%</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Tip Percentage: <%- bill.tipPercent %>%</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Group Size: <%- bill.groupSize %></span>
+                </li>
+                <li class="list-group-item">
+                    <span>Splitted Amount: <%- result %></span>
+                </li>
+            </ul>
+            <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                <a href="/bills/<%- bill.id %>/edit " class="btn btn-link">Edit</a>
+                <form action="/bills/<%- bill.id %>" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="Delete" class="btn btn-link">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>

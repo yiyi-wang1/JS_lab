@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs') %>
+    <div class="row row-cols-1 row-cols-md-4 g-5">
+        <% for(let bill of bills){ %>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Bill <%- bill.id %>
+                        </h5>
+                        <em>Created: <%- bill.created_at %> </em>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span>Total Amount: <%- bill.billTotal %> </span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Group Size: <%- bill.groupSize %></span>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="/bills/<%- bill.id %>" class="card-link">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+    </div>
+    <%- include('../partials/footer.ejs') %>

@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+    <h1>Update Bill</h1>
+    <form action="/bills/<%- bill.id %> " method="post">
+        <input type="hidden" name="_method" value="patch">
+        <div class="row g-3 align-items-center">
+            <div class="mb-3">
+                <label class="form-label">Bill Total</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input name="billTotal" type="number" class="form-control"
+                        aria-label="Amount (to the nearest dollar)" placeholder="<%- bill.billTotal %>">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tax Percentage</label>
+                <input name="taxPercent" type="number" class="form-control" min="0" max="100"
+                    placeholder="<%- bill.taxPercent %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tip Percentage</label>
+                <input name="tipPercent" type="number" class="form-control" min="0" max="100"
+                    placeholder="<%- bill.tipPercent %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Group Size</label>
+                <input name="groupSize" type="number" class="form-control" min="1" placeholder="<%- bill.groupSize %>">
+            </div>
+            <input type="submit" value="Update Bill" class="btn btn-primary col-auto">
+        </div>
+    </form>
+
+    <%- include('../partials/footer.ejs') %>
