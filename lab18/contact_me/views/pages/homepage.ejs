@@ -1,0 +1,8 @@
+<%- include('../partials/header.ejs') %>
+    <% if(user) {%>
+        <form action="/log_out" method="post">
+            <label class="form-label">Hi, <%-user%></label>
+            <button type="submit" class="btn btn-primary">Log Out</button>
+        </form>
+        <%}%>
+            <%- include('../partials/footer.ejs') %>
