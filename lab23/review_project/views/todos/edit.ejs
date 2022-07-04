@@ -1,0 +1,8 @@
+<!-- update the single todo -->
+
+<%- include('../partials/header.ejs') %>
+    <h1 class="ms-3">Update the todo</h1>
+    <form action='/todos/<%- todo.id %>' method='post' class="mx-3">
+        <input type="hidden" name="_method" value="patch">
+        <%- include('../partials/form.ejs') %>
+            <%- include('../partials/footer.ejs') %>

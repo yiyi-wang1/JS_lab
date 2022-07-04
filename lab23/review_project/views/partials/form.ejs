@@ -1,0 +1,19 @@
+<div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="<%- todo.title? todo.title:''  %> ">
+</div>
+<div class="mb-3">
+    <label for="imageUrl" class="form-label">Image URL</label>
+    <input type="text" class="form-control" id="imageUrl" name="imageUrl"
+        value="<%- todo.imageUrl? todo.imageUrl:''  %> ">
+</div>
+
+<div class="mb-3">
+    <label for="imageUrl" class="form-label">Content</label>
+    <textarea type="text" class="form-control" id="content"
+        name="content"><%- todo.content? todo.content:''  %> </textarea>
+</div>
+<button type="submit" class="btn btn-primary">
+    <%-todo? 'Update' : 'Submit' %>
+</button>
+</form>

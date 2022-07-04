@@ -1,0 +1,30 @@
+<!-- show the single todo -->
+
+<%- include('../partials/header.ejs') %>
+    <h1 class="ms-3 mb-3">View Todo</h1>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<%- todo.imageUrl %>" class="img-fluid rounded-start" alt="todo image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%- todo.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%- todo.content %>
+                    </p>
+                    <p class="card-text"><small class="text-muted">Updated at: <%- todo.updatedAt %></small></p>
+                    <div class="d-flex">
+                        <a href="/todos/<%- todo.id %>/edit " class="btn btn-outline-primary">Edit</a>
+                        <form action="/todos/<%- todo.id %>" method="post" class="ms-3">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>

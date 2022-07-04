@@ -1,0 +1,24 @@
+<!-- show all todos -->
+
+<%- include('../partials/header.ejs') %>
+    <h1 class="ms-3">All todos</h1>
+
+    <div class="row row-cols-auto row-cols-md-3 g-4 ms-3">
+        <% for (let todo of todos){ %>
+            <div class="card mx-3 py-3" style="width: 18rem;">
+                <img src="<%- todo.imageUrl %> " class="card-img-top" alt="todo image">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%- todo.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%- todo.content %>
+                    </p>
+                    <small>Updated at: <%-todo.updatedAt %> </small>
+                </div>
+                <a href="/todos/<%- todo.id %> " class="btn btn-primary">View todo</a>
+            </div>
+            <% } %>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
