@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <title>Please Login</title>
 </head>
 
-<body>
-    <form action="/log_in" method="post">
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="user" name="user">
+<body style="height: 100%;">
+    <div style="max-width: 200px; height: 100%;" class="d-flex m-auto align-items-center">
+        <div>
+            <form action="/log_in" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="user" name="user">
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">LogIn</button>
-    </form>
+    </div>
 </body>
 
 </html>
