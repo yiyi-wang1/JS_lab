@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-
 //Setup Middleware
 //1. Morgan
 const logger = require('morgan');
@@ -36,6 +35,7 @@ app.use((req, res, next) => {
     next();
 })
 
+
 //Router
 const todoRouter = require('./routes/todos');
 app.use('/todos', todoRouter);
@@ -57,6 +57,22 @@ app.post('/logout', (req, res) => {
     res.redirect('/');
 })
 
+
+//7. Error Handler --> This must put at the end of routes
+//Whatever not satifised with the above, will trigger this
+const createError = require('http-errors');
+app.use((req, res, next) => {
+    next(createError(404));
+})
+
+app.use((err, req, res, next) => {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+})
 
 //Setup view engine
 app.set('view engine', 'ejs');
